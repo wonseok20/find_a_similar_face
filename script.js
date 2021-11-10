@@ -179,6 +179,7 @@ switch (gender){
 async function init() {
     document.getElementById('messages').innerHTML = "AI 분석 중";
     document.getElementById('label-container').style.display = 'none';
+    document.getElementById('file')
 
 
     const modelURL = URL + 'model.json';
@@ -235,10 +236,12 @@ async function predict() {
         //console.log(probabilityValue);
 
 
-        if (probabilityValue > 50) {
+        if (probabilityValue > 80) {
             labelContainer.childNodes[i].innerHTML =
                prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.";
-
+               document.getElementById('file-image1').src = `./female_actor/${entertainer}/1.jpg`;
+               document.getElementById('file-image1').classList.remove('hidden');
+               break;
         }
         // document.getElementById("lank").value = probabilityValue[i];
         var entertainer = prediction[0].className;
@@ -250,11 +253,7 @@ async function predict() {
 
         
         // 연애인 사진 업로드
-        document.getElementById('file-image1').src = `./female_actor/${entertainer}/1.jpg`
-        document.getElementById('file-image1').classList.remove('hidden');
-
         
-
     }
 
     console.log(entertainer);
