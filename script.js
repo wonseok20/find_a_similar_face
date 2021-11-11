@@ -177,7 +177,7 @@ switch (gender){
 
 // Load the image model and setup the webcam
 async function init() {
-    document.getElementById('messages').innerHTML = "google teachablemachine이 분석 중";
+    document.getElementById('messages').innerHTML = "Google Teachable Machine(머신러닝) 분석 중";
     document.getElementById('label-container').style.display = 'none';
     document.getElementById(`label-container`).innerHTML = "";
     document.getElementById('file-image1').classList.add('hidden');
