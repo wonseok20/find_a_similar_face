@@ -177,8 +177,9 @@ switch (gender){
 
 // Load the image model and setup the webcam
 async function init() {
-    document.getElementById('messages').innerHTML = "AI 분석 중";
+    document.getElementById('messages').innerHTML = "google teachablemachine이 분석 중";
     document.getElementById('label-container').style.display = 'none';
+    document.getElementById(`label-container`).innerHTML = "";
     document.getElementById('file-image1').classList.add('hidden');
     document.getElementById('file')
 
@@ -208,6 +209,7 @@ async function init() {
         // and class labels
         labelContainer.appendChild(document.createElement('div'));
     }
+    
 }
 
 // async function loop() {
@@ -228,7 +230,9 @@ async function predict() {
     let image = document.getElementById('file-image');
     const prediction = await model.predict(image, false);
     prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-    let Nopredict = "";
+    let Nopredict = 1;
+    let entertainer = null;
+    
     for (let i = 0; i < maxPredictions; i++) {
         let probabilityValue = parseFloat(prediction[i].probability.toFixed(2));
         probabilityValue = parseInt(Math.round(probabilityValue * 100));
@@ -238,29 +242,24 @@ async function predict() {
         //console.log(probabilityValue);
         
         if (probabilityValue > 80) {
-            var entertainer = prediction[i].className;
+            entertainer = prediction[i].className;
             // console.log(entertainer+": 닮은 비율"+ probabilityValue);
-
+            Nopredict += 1;
+            console.log(`nopredict= ${Nopredict}`);
             labelContainer.childNodes[i].innerHTML =
                prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.";
                document.getElementById('file-image1').src = `./female_actor/${entertainer}/1.jpg`;
                document.getElementById('file-image1').classList.remove('hidden');
-            //    break;
+                console.log(`entertainer=`+entertainer);
+            //    if(entertainer == null){
+            //        labelContainer.childNodes[o].innerHTML = `80%이상 닮은 연예인이 없습니다.`
+            //    }
         }
-        // document.getElementById("lank").value = probabilityValue[i];
-        
-        // console.log(`${prediction[0].className}: ${probabilityValue}`);
-
-        // 연애인 object 선언 배열
-        //         entertainer의 kName으로 배열중의 eName을 찾아서 eName을 반환한다. 
-        //         반환한 eName으로 아래의 사진을 업로드 한다.
-
-        
-        // 연애인 사진 업로드
-        
     }
-    
-    
+    if(Nopredict == 1){
+        // console.log(`nopredict1=${Nopredict}`);
+        document.getElementById(`label-container`).innerHTML = `등록된 연예인 중 80%이상 닮은 사람이 없습니다.`;
+    }
 }
 
 //
