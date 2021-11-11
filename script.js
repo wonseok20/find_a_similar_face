@@ -239,7 +239,7 @@ async function predict() {
         
         if (probabilityValue > 80) {
             var entertainer = prediction[i].className;
-            console.log(entertainer+": 닮은 비율"+ probabilityValue);
+            // console.log(entertainer+": 닮은 비율"+ probabilityValue);
 
             labelContainer.childNodes[i].innerHTML =
                prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.";
