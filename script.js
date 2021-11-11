@@ -179,6 +179,7 @@ switch (gender){
 async function init() {
     document.getElementById('messages').innerHTML = "AI 분석 중";
     document.getElementById('label-container').style.display = 'none';
+    document.getElementById('file-image1').classList.add('hidden');
     document.getElementById('file')
 
 
@@ -218,7 +219,7 @@ async function init() {
 // run the webcam image through the image model
 async function predict() {
     // predict can take in an image, video or canvas html element
-    document.getElementById('messages').innerHTML = `연예인 TOP ${maxPredictions}명을 분석한 결과`;
+    document.getElementById('messages').innerHTML = `연예인 ${maxPredictions}명을 분석한 결과`;
     // output(`연예인 TOP ${maxPredictions}명을 분석한 결과`);
     document.getElementById('loading').classList.add('visually-hidden');
     document.getElementById('notice').classList.add('visually-hidden');
@@ -227,6 +228,7 @@ async function predict() {
     let image = document.getElementById('file-image');
     const prediction = await model.predict(image, false);
     prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+    let Nopredict = "";
     for (let i = 0; i < maxPredictions; i++) {
         let probabilityValue = parseFloat(prediction[i].probability.toFixed(2));
         probabilityValue = parseInt(Math.round(probabilityValue * 100));
@@ -234,17 +236,19 @@ async function predict() {
         // const classPrediction = prediction[i].className + ": " + probabilityValue;
         //console.log(typeof(probabilityValue));
         //console.log(probabilityValue);
-
-
+        
         if (probabilityValue > 80) {
+            var entertainer = prediction[i].className;
+            console.log(entertainer+": 닮은 비율"+ probabilityValue);
+
             labelContainer.childNodes[i].innerHTML =
                prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.";
                document.getElementById('file-image1').src = `./female_actor/${entertainer}/1.jpg`;
                document.getElementById('file-image1').classList.remove('hidden');
-               break;
+            //    break;
         }
         // document.getElementById("lank").value = probabilityValue[i];
-        var entertainer = prediction[0].className;
+        
         // console.log(`${prediction[0].className}: ${probabilityValue}`);
 
         // 연애인 object 선언 배열
@@ -255,8 +259,8 @@ async function predict() {
         // 연애인 사진 업로드
         
     }
-
-    console.log(entertainer);
+    
+    
 }
 
 //
