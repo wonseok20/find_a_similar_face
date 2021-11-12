@@ -201,7 +201,7 @@ p {
     /* float: left; 
     clear: both; */
     display: inline-flexbox;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.1rem 0;
     color: #5f6982;
 }
 
@@ -378,4 +378,5 @@ body {
   .add-banner{
       width: 320px;
       margin: o auto;
+      margin-bottom: 2px;
   }
