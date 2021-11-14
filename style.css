@@ -195,10 +195,10 @@ p {
         /* margin: 0 auto 0.5rem auto; */
         max-width: 75px;
         max-height: 75px;
-        border-radius: 37px;
+        border-radius: 38.5px;
         opacity: 0.5;
         position: relative;
-        transform: translateX(37px);
+        transform: translateX(38.5px);
         transition: all 5s ease;
         }
     .uploader #file-image2 {
@@ -206,10 +206,10 @@ p {
         /* margin: 0 auto 0.5rem auto; */
         max-width: 75px;
         max-height: 75px;
-        border-radius: 37px;
+        border-radius: 38.5px;
         opacity: 0.5;
         position: relative;
-        transform: translateX(-37px);
+        transform: translateX(-38.5px);
         transition: all 5s ease;
      }
     .uploader #file-image3 {
@@ -217,7 +217,7 @@ p {
         /* margin: 0 auto 0.5rem auto; */
         max-width: 75px;
         max-height: 75px;
-        border-radius: 37px;
+        border-radius: 38.5px;
         animation: fadein 2s;
         -moz-animation: fadein 2s;
         /* Firefox */
