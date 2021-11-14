@@ -198,8 +198,8 @@ p {
         border-radius: 37px;
         opacity: 0.5;
         position: relative;
-        transform: translateX(45px);
-        transition: all 10s ease;
+        transform: translateX(37px);
+        transition: all 5s ease;
         }
     .uploader #file-image2 {
         display: inline;
@@ -209,8 +209,8 @@ p {
         border-radius: 37px;
         opacity: 0.5;
         position: relative;
-        transform: translateX(-45px);
-        transition: all 10s ease;
+        transform: translateX(-37px);
+        transition: all 5s ease;
      }
     .uploader #file-image3 {
         display: inline;
