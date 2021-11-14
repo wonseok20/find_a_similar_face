@@ -7,6 +7,7 @@ body,
     box-sizing: border-box;
     font-size: 1em;
     color: #5f6982;
+
    
 }
 
@@ -113,6 +114,7 @@ p {
 /* .uploader #response #messages {
   margin-bottom: 0.5rem;
 } */
+/* @media screen and (max-width: 768) { */
 .uploader #file-image {
     display: inline-block;
     /* margin: 0 auto 0.5rem auto; */
@@ -121,7 +123,7 @@ p {
 
     max-width: 140px;
     max-height: 140px;
-    /* border-radius: 2em; */
+    border-radius: 70px;
     animation: fadein 2s;
         -moz-animation: fadein 2s;
         /* Firefox */
@@ -129,9 +131,7 @@ p {
         /* Safari and Chrome */
         -o-animation: fadein 2s;
         /* Opera */
-   
-}
-@media screen and (min-width: 620px) {
+    }
     .uploader #file-image1 {
         display: inline;
         /* margin: 0 auto 0.5rem auto; */
@@ -140,7 +140,8 @@ p {
         opacity: 0.5;
         position: relative;
         transform: translateX(72px);
-        transition: all 5s ease;
+        transition: all 10s ease;
+        border-radius: 70px;
         
     }
     .uploader #file-image2 {
@@ -152,39 +153,82 @@ p {
         opacity: 0.5;
         position: relative;
         transform: translateX(-72px);
-        transition: all 5s ease;
+        transition: all 10s ease;
+        border-radius: 70px;
         
     }
-}
-@media screen and (max-width: 620px) {
+    .uploader #file-image3 {
+        display: inline;
+        /* margin: 0 auto 0.5rem auto; */
+       
+        max-width: 140px;
+        max-height: 140px;
+        border-radius: 70px;
+        animation: fadein 2s;
+        -moz-animation: fadein 2s;
+        /* Firefox */
+        -webkit-animation: fadein 2s;
+        /* Safari and Chrome */
+        -o-animation: fadein 2s;
+        /* Opera */
+        position: relative;
+        /* left: -140px; */
+    
+    }
+
+@media screen and (max-width: 630px) {
+    .uploader #file-image {
+        display: inline-block;
+        max-width: 75px;
+        max-height: 75px;
+        border-radius: 37px;
+        animation: fadein 2s;
+            -moz-animation: fadein 2s;
+            /* Firefox */
+            -webkit-animation: fadein 2s;
+            /* Safari and Chrome */
+            -o-animation: fadein 2s;
+            /* Opera */
+        }
     .uploader #file-image1 {
-        display: none;
-    }
+        display: inline;
+        /* margin: 0 auto 0.5rem auto; */
+        max-width: 75px;
+        max-height: 75px;
+        border-radius: 37px;
+        opacity: 0.5;
+        position: relative;
+        transform: translateX(45px);
+        transition: all 10s ease;
+        }
     .uploader #file-image2 {
-        display: none;
+        display: inline;
+        /* margin: 0 auto 0.5rem auto; */
+        max-width: 75px;
+        max-height: 75px;
+        border-radius: 37px;
+        opacity: 0.5;
+        position: relative;
+        transform: translateX(-45px);
+        transition: all 10s ease;
+     }
+    .uploader #file-image3 {
+        display: inline;
+        /* margin: 0 auto 0.5rem auto; */
+        max-width: 75px;
+        max-height: 75px;
+        border-radius: 37px;
+        animation: fadein 2s;
+        -moz-animation: fadein 2s;
+        /* Firefox */
+        -webkit-animation: fadein 2s;
+        /* Safari and Chrome */
+        -o-animation: fadein 2s;
+        /* Opera */
+        position: relative;
+        /* left: -140px; */
+        }
     }
-}
-
-
-.uploader #file-image3 {
-    display: inline;
-    /* margin: 0 auto 0.5rem auto; */
-   
-    max-width: 140px;
-    max-height: 140px;
-    /* border-radius: 2em; */
-    animation: fadein 2s;
-    -moz-animation: fadein 2s;
-    /* Firefox */
-    -webkit-animation: fadein 2s;
-    /* Safari and Chrome */
-    -o-animation: fadein 2s;
-    /* Opera */
-    position: relative;
-    /* left: -140px; */
-
-}
-
 
 .uploader #file-image.hidden {
     display: none;
@@ -429,3 +473,5 @@ body {
       margin: o auto;
       margin-bottom: 2px;
   }
+
+  
