@@ -38,15 +38,15 @@ p {
 }
 
 .uploader {
-    display: inline; 
-    clear: both;
-    /* margin: 0 auto; */
+    display: inline-block ; 
+    /* clear: both; */
+    margin: 0 auto;
     width: 100%;
 }
 
 .uploader label {
-    float: left;
-    clear: both;
+    /* float: left;
+    clear: both; */
     width: 100%;
     padding: 0.5rem 0.5rem;
     text-align: center;
@@ -114,24 +114,64 @@ p {
   margin-bottom: 0.5rem;
 } */
 .uploader #file-image {
-    display: inline;
+    display: inline-block;
     /* margin: 0 auto 0.5rem auto; */
     /* width: 140px; */
     /* height: 222px; */
-    width: 100%;
-    height: auto;
+
     max-width: 140px;
-    max-height: 145px;
+    max-height: 140px;
     /* border-radius: 2em; */
+    animation: fadein 2s;
+        -moz-animation: fadein 2s;
+        /* Firefox */
+        -webkit-animation: fadein 2s;
+        /* Safari and Chrome */
+        -o-animation: fadein 2s;
+        /* Opera */
+   
+}
+@media screen and (min-width: 620px) {
+    .uploader #file-image1 {
+        display: inline;
+        /* margin: 0 auto 0.5rem auto; */
+        width: 140px;
+        height: 140px;
+        opacity: 0.5;
+        position: relative;
+        transform: translateX(72px);
+        transition: all 5s ease;
+        
+    }
+    .uploader #file-image2 {
+        display: inline;
+        /* margin: 0 auto 0.5rem auto; */
+        width: 140px;
+        height: 140px;
+        border-radius: 2em;
+        opacity: 0.5;
+        position: relative;
+        transform: translateX(-72px);
+        transition: all 5s ease;
+        
+    }
+}
+@media screen and (max-width: 620px) {
+    .uploader #file-image1 {
+        display: none;
+    }
+    .uploader #file-image2 {
+        display: none;
+    }
 }
 
-.uploader #file-image1 {
+
+.uploader #file-image3 {
     display: inline;
     /* margin: 0 auto 0.5rem auto; */
-    width: 100%;
-    height: auto;
+   
     max-width: 140px;
-    max-height: 145px;
+    max-height: 140px;
     /* border-radius: 2em; */
     animation: fadein 2s;
     -moz-animation: fadein 2s;
@@ -140,6 +180,9 @@ p {
     /* Safari and Chrome */
     -o-animation: fadein 2s;
     /* Opera */
+    position: relative;
+    /* left: -140px; */
+
 }
 
 
@@ -148,6 +191,12 @@ p {
 }
 
 .uploader #file-image1.hidden {
+    display: none;
+}
+.uploader #file-image2.hidden {
+    display: none;
+}
+.uploader #file-image3.hidden {
     display: none;
 }
 .uploader #empty_box.hidden{

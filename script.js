@@ -66,9 +66,11 @@ function ekUpload() {
             document.getElementById('notimage').classList.add('hidden');
             // Thumbnail Preview
             document.getElementById('file-image').classList.remove('hidden');
+            // document.getElementById('file-image1').classList.remove('hidden');
 
             // document.getElementById('file-image').src = URL.createObjectURL(file);
             document.getElementById('file-image').src = webkitURL.createObjectURL(file);
+            document.getElementById('file-image1').src = webkitURL.createObjectURL(file);
 
             console.log(document.getElementById('file-image').src);
 
@@ -79,6 +81,8 @@ function ekUpload() {
         } else {
             document.getElementById('file-image').classList.add('hidden');
             document.getElementById('file-image1').classList.add('hidden');
+            document.getElementById('file-image2').classList.add('hidden');
+            document.getElementById('file-image3').classList.add('hidden');
             document.getElementById('notimage').classList.remove('hidden');
             document.getElementById('start').classList.remove('hidden');
             document.getElementById('response').classList.add('hidden');
@@ -181,6 +185,8 @@ async function init() {
     document.getElementById('label-container').style.display = 'none';
     document.getElementById(`label-container`).innerHTML = "";
     document.getElementById('file-image1').classList.add('hidden');
+    document.getElementById('file-image2').classList.add('hidden');
+    document.getElementById('file-image3').classList.add('hidden');
     document.getElementById('file')
 
 
@@ -248,8 +254,11 @@ async function predict() {
             console.log(`nopredict= ${Nopredict}`);
             labelContainer.childNodes[i].innerHTML =
                prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.";
-               document.getElementById('file-image1').src = `./female_actor/${entertainer}/1.jpg`;
-               document.getElementById('file-image1').classList.remove('hidden');
+               document.getElementById('file-image2').src = `./female_actor/${entertainer}/1.jpg`;
+               document.getElementById('file-image3').src = `./female_actor/${entertainer}/1.jpg`;
+                document.getElementById('file-image1').classList.remove('hidden');
+               document.getElementById('file-image2').classList.remove('hidden');
+               document.getElementById('file-image3').classList.remove('hidden');
                 console.log(`entertainer=`+entertainer);
             //    if(entertainer == null){
             //        labelContainer.childNodes[o].innerHTML = `80%이상 닮은 연예인이 없습니다.`
