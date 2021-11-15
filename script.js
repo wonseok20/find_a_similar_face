@@ -172,14 +172,14 @@ gender = document.getElementById('gender').innerText;
 
 
 switch (gender){
-    case '남자' : URL = `https://teachablemachine.withgoogle.com/models/zS6__B0_1/`;
+    case '남자' : URL = `https://teachablemachine.withgoogle.com/models/ZJzMn0AnF/`;
                     imageForderName = "male_actor";
         break;
     case '여자' : URL = 'https://teachablemachine.withgoogle.com/models/ImPmngLrw/';
                     imageForderName = "female_actor";
         break;
     default:
-        URL = `https://teachablemachine.withgoogle.com/models/zS6__B0_1/`;
+        URL = `https://teachablemachine.withgoogle.com/models/ImPmngLrw/`;
 }
 // console.log(`imageForderName= ${imageForderName}`)
 
