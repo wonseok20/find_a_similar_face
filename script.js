@@ -167,7 +167,7 @@ ekUpload();
 
 let model, labelContainer, maxPredictions, gender, URL;
 gender = document.getElementById('gender').innerText;
-console.log(`gender=${gender}`);
+// console.log(`gender=${gender}`);
 
 
 
@@ -181,7 +181,7 @@ switch (gender){
     default:
         URL = `https://teachablemachine.withgoogle.com/models/zS6__B0_1/`;
 }
-console.log(`imageForderName= ${imageForderName}`)
+// console.log(`imageForderName= ${imageForderName}`)
 
 // Load the image model and setup the webcam
 async function init() {
