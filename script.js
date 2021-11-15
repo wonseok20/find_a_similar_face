@@ -170,14 +170,18 @@ gender = document.getElementById('gender').innerText;
 console.log(`gender=${gender}`);
 
 
+
 switch (gender){
     case '남자' : URL = `https://teachablemachine.withgoogle.com/models/zS6__B0_1/`;
+                    imageForderName = "male_actor";
         break;
     case '여자' : URL = 'https://teachablemachine.withgoogle.com/models/ImPmngLrw/';
+                    imageForderName = "female_actor";
         break;
     default:
         URL = `https://teachablemachine.withgoogle.com/models/zS6__B0_1/`;
 }
+console.log(`imageForderName= ${imageForderName}`)
 
 // Load the image model and setup the webcam
 async function init() {
@@ -254,8 +258,8 @@ async function predict() {
             console.log(`nopredict= ${Nopredict}`);
             labelContainer.childNodes[i].innerHTML =
                prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.";
-               document.getElementById('file-image2').src = `./female_actor/${entertainer}/1.jpg`;
-               document.getElementById('file-image3').src = `./female_actor/${entertainer}/1.jpg`;
+               document.getElementById('file-image2').src = `./${imageForderName}/${entertainer}/1.jpg`;
+               document.getElementById('file-image3').src = `./${imageForderName}/${entertainer}/1.jpg`;
                 document.getElementById('file-image1').classList.remove('hidden');
                document.getElementById('file-image2').classList.remove('hidden');
                document.getElementById('file-image3').classList.remove('hidden');

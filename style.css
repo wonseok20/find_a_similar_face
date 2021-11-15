@@ -230,6 +230,60 @@ p {
         }
     }
 
+    @media screen and (max-width: 280px) {
+        .uploader #file-image {
+            display: inline-block;
+            max-width: 55px;
+            max-height: 55px;
+            border-radius: 27.5px;
+            animation: fadein 2s;
+                -moz-animation: fadein 2s;
+                /* Firefox */
+                -webkit-animation: fadein 2s;
+                /* Safari and Chrome */
+                -o-animation: fadein 2s;
+                /* Opera */
+            }
+        .uploader #file-image1 {
+            display: inline;
+            /* margin: 0 auto 0.5rem auto; */
+            max-width: 55px;
+            max-height: 55px;
+            border-radius: 27.5px;
+            opacity: 0.5;
+            position: relative;
+            transform: translateX(27.5px);
+            transition: all 5s ease;
+            }
+        .uploader #file-image2 {
+            display: inline;
+            /* margin: 0 auto 0.5rem auto; */
+            max-width: 55px;
+            max-height: 55px;
+            border-radius: 27.5px;
+            opacity: 0.5;
+            position: relative;
+            transform: translateX(-27.5px);
+            transition: all 5s ease;
+         }
+        .uploader #file-image3 {
+            display: inline;
+            /* margin: 0 auto 0.5rem auto; */
+            max-width: 55px;
+            max-height: 55px;
+            border-radius: 27.5px;
+            animation: fadein 2s;
+            -moz-animation: fadein 2s;
+            /* Firefox */
+            -webkit-animation: fadein 2s;
+            /* Safari and Chrome */
+            -o-animation: fadein 2s;
+            /* Opera */
+            position: relative;
+            /* left: -140px; */
+            }
+        }
+    
 .uploader #file-image.hidden {
     display: none;
 }
