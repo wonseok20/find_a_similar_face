@@ -254,18 +254,18 @@ async function predict() {
         //console.log(typeof(probabilityValue));
         //console.log(probabilityValue);
         
-        if (probabilityValue > 80) {
+        if (probabilityValue > 70) {
             entertainer = prediction[i].className;
             // console.log(entertainer+": 닮은 비율"+ probabilityValue);
             Nopredict += 1;
             console.log(`nopredict= ${Nopredict}`);
             labelContainer.childNodes[i].innerHTML =
-               prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.<br><span style='color:blue;'> 혹시! " + prediction[i].className  +"님 본인 아니세요?</span>";
-               document.getElementById('file-image2').src = `./${imageForderName}/${entertainer}/1.jpg`;
-               document.getElementById('file-image3').src = `./${imageForderName}/${entertainer}/1.jpg`;
+                prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.<br><span style='color:blue;'> 혹시! " + prediction[i].className  +"님 본인 아니세요?</span>";
+                document.getElementById('file-image2').src = `./${imageForderName}/${entertainer}/1.jpg`;
+                document.getElementById('file-image3').src = `./${imageForderName}/${entertainer}/1.jpg`;
                 document.getElementById('file-image1').classList.remove('hidden');
-               document.getElementById('file-image2').classList.remove('hidden');
-               document.getElementById('file-image3').classList.remove('hidden');
+                document.getElementById('file-image2').classList.remove('hidden');
+                document.getElementById('file-image3').classList.remove('hidden');
                 console.log(`entertainer=`+entertainer);
             //    if(entertainer == null){
             //        labelContainer.childNodes[o].innerHTML = `80%이상 닮은 연예인이 없습니다.`
