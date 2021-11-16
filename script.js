@@ -165,7 +165,7 @@ ekUpload();
 
 // 여자연애인
 
-let model, labelContainer, maxPredictions, gender, URL;
+let model, labelContainer, maxPredictions, gender, URL,lavelImage;
 gender = document.getElementById('gender').innerText;
 // console.log(`gender=${gender}`);
 
@@ -215,9 +215,12 @@ async function init() {
     // append elements to the DOM
     // document.getElementById("webcam-container").appendChild(webcam.canvas);
     labelContainer = document.getElementById('label-container');
+    lavelImage = document.getElementById('label-image');
     for (let i = 0; i < maxPredictions; i++) {
         // and class labels
         labelContainer.appendChild(document.createElement('div'));
+        // lavelImage.appendChild(document.createElement('div'));
+        
     }
     
 }
@@ -257,7 +260,7 @@ async function predict() {
             Nopredict += 1;
             console.log(`nopredict= ${Nopredict}`);
             labelContainer.childNodes[i].innerHTML =
-               prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.";
+               prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.<br><span style='color:blue;'> 혹시! " + prediction[i].className  +"님 본인 아니세요?</span>";
                document.getElementById('file-image2').src = `./${imageForderName}/${entertainer}/1.jpg`;
                document.getElementById('file-image3').src = `./${imageForderName}/${entertainer}/1.jpg`;
                 document.getElementById('file-image1').classList.remove('hidden');
@@ -267,11 +270,16 @@ async function predict() {
             //    if(entertainer == null){
             //        labelContainer.childNodes[o].innerHTML = `80%이상 닮은 연예인이 없습니다.`
             //    }
+        // }else{
+        //     lavelImage.childNodes[i].innerHTML =
+        //     `<img src="./${prediction[i].className}.jpg" alt="Preview" class="hidden img-fluid " />`
+
         }
     }
     if(Nopredict == 1){
         // console.log(`nopredict1=${Nopredict}`);
-        document.getElementById(`label-container`).innerHTML = `등록된 연예인 중 80%이상 닮은 사람이 없습니다.`;
+        document.getElementById(`label-container`).innerHTML = 
+        `아쉽게도 등록된 연예인 중 80%이상 닮은 사람이 없습니다.<br> <span style='color:blue;'> 매일 더 많은 연예인을 등록 중이니 많은 관심 부탁드립니다.</span>`;
     }
 }
 
