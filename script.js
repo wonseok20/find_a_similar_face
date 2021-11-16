@@ -254,7 +254,7 @@ async function predict() {
         //console.log(typeof(probabilityValue));
         //console.log(probabilityValue);
         
-        if (probabilityValue > 70) {
+        if (probabilityValue > 80) {
             entertainer = prediction[i].className;
             // console.log(entertainer+": 닮은 비율"+ probabilityValue);
             Nopredict += 1;
