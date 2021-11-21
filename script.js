@@ -172,10 +172,10 @@ gender = document.getElementById('gender').innerText;
 
 
 switch (gender){
-    case '남자' : URL = `https://teachablemachine.withgoogle.com/models/ZJzMn0AnF/`;
+    case '남성' : URL = `https://teachablemachine.withgoogle.com/models/ZJzMn0AnF/`;
                     imageForderName = "male_actor";
         break;
-    case '여자' : URL = 'https://teachablemachine.withgoogle.com/models/ImPmngLrw/';
+    case '여성' : URL = 'https://teachablemachine.withgoogle.com/models/ImPmngLrw/';
                     imageForderName = "female_actor";
         break;
     default:
@@ -253,10 +253,12 @@ async function predict() {
         // const classPrediction = prediction[i].className + ": " + probabilityValue;
         //console.log(typeof(probabilityValue));
         //console.log(probabilityValue);
+        entertainer = prediction[i].className;
+        console.log(entertainer+": 닮은 비율"+ probabilityValue);
         
         if (probabilityValue > 80) {
-            entertainer = prediction[i].className;
-            // console.log(entertainer+": 닮은 비율"+ probabilityValue);
+            
+            // 
             Nopredict += 1;
             console.log(`nopredict= ${Nopredict}`);
             labelContainer.childNodes[i].innerHTML =
@@ -273,8 +275,9 @@ async function predict() {
         }else if(probabilityValue >10){
             // lavelImage.childNodes[i].innerHTML =
             // `<img src="./${prediction[i].className}.jpg" alt="Preview" class="hidden img-fluid " />`
+            Nopredict += 1;
             document.getElementById(`label-container`).innerHTML = 
-            "<span style='color:blue;'> 그나마 "+prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.</span>";
+            "<span style='color:blue;'>80%이상 닮은 연예인은 없지만 그래도 "+prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.</span>";
         }
     }
     if(Nopredict == 1){
