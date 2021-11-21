@@ -272,12 +272,30 @@ async function predict() {
             //    if(entertainer == null){
             //        labelContainer.childNodes[o].innerHTML = `80%이상 닮은 연예인이 없습니다.`
             //    }
-        }else if(probabilityValue >10){
+        }else if(probabilityValue >= 50){
             // lavelImage.childNodes[i].innerHTML =
             // `<img src="./${prediction[i].className}.jpg" alt="Preview" class="hidden img-fluid " />`
+           
+            if(Nopredict == 1){
+            labelContainer.childNodes[i].innerHTML =
+            "<span style='color:red;'>80%이상 닮은 사람은 없지만 <br>얼핏보면 "+prediction[i].className + '와(과)' + probabilityValue + "% 닮았습니다.</span>";
+            }else{
+                labelContainer.childNodes[i].innerHTML =
+            "<span style='color:red;'>얼핏보면 "+prediction[i].className + '와(과)' + probabilityValue + "% 닮았습니다.</span>";    
+            }
             Nopredict += 1;
-            document.getElementById(`label-container`).innerHTML = 
-            "<span style='color:blue;'>80%이상 닮은 연예인은 없지만 그래도 "+prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.</span>";
+
+        }else if(probabilityValue >= 20){
+            // lavelImage.childNodes[i].innerHTML =
+            // `<img src="./${prediction[i].className}.jpg" alt="Preview" class="hidden img-fluid " />`
+           if(Nopredict==1){
+            labelContainer.childNodes[i].innerHTML =
+            "<span style='color:red;'>20%이상 닮은 사람은 없지만<br> "+prediction[i].className + '와(과) ' + probabilityValue + "% 닮았습니다.</span>";
+           }else{
+            labelContainer.childNodes[i].innerHTML =
+            "<span style='color:red;'>굳이 닮았다고 주장할 만한 사람으로는<br> "+prediction[i].className + '와(과)' + probabilityValue + "% 닮았습니다.</span>";
+           }
+            Nopredict += 1;
         }
     }
     if(Nopredict == 1){

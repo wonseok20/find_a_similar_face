@@ -209,6 +209,7 @@ p {
     float: left;
     clear: both;
     width: 100vw;
+    font-size:xx-small;
 }
 
 .uploader #notimage.hidden {
