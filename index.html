@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css" />
     <meta name="title" content="닮은꼴 연예인">
     <meta name="subject" content="AI로 분석한 나와 닮은 연예인을 찾아보세요!">
@@ -84,16 +85,22 @@
     <script type="text/javascript"></script>
     
     <h4 class="mb-1 mt-2">나와 닮은</h4>
-    <h6 class="mb-3">대한민국 <span id="gender">여자</span> 연예인 찾기</h6>
+    <h6 class="mb-3">대한민국 <span id="gender">여성</span>연예인 찾기</h6>
 
     <!-- Upload  -->
 
-      <!-- 스위치
+      <!-- 스위치-->
+      <!-- <div class="form-check form-switch">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-male" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M9.5 2a.5.5 0 0 1 0-1h5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0V2.707L9.871 6.836a5 5 0 1 1-.707-.707L13.293 2H9.5zM6 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+      </svg>
       <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
+        <input type="checkbox" role="switch" id="flexSwitchCheckCheked" checked><span id="female"class="slider round"></span>
       </label>
-      <p>여자</p><p style="display:none;">남자</p> -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gender-female" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5z"/>
+      </svg>
+    </div> -->
       <!-- 스위치 종료 -->
 
     <form id="file-upload-form" class="uploader">
