@@ -270,16 +270,17 @@ async function predict() {
             //    if(entertainer == null){
             //        labelContainer.childNodes[o].innerHTML = `80%이상 닮은 연예인이 없습니다.`
             //    }
-        // }else{
-        //     lavelImage.childNodes[i].innerHTML =
-        //     `<img src="./${prediction[i].className}.jpg" alt="Preview" class="hidden img-fluid " />`
-
+        }else if(probabilityValue >10){
+            // lavelImage.childNodes[i].innerHTML =
+            // `<img src="./${prediction[i].className}.jpg" alt="Preview" class="hidden img-fluid " />`
+            document.getElementById(`label-container`).innerHTML = 
+            "<span style='color:blue;'> 그나마 "+prediction[i].className + '와(과) </br>' + probabilityValue + "% 비율로 닮았습니다.</span>";
         }
     }
     if(Nopredict == 1){
         // console.log(`nopredict1=${Nopredict}`);
         document.getElementById(`label-container`).innerHTML = 
-        `아쉽게도 등록된 연예인 중 80%이상 닮은 사람이 없습니다.<br> <span style='color:blue;'> 매일 더 많은 연예인을 등록 중이니 많은 관심 부탁드립니다.</span>`;
+        `아쉽게도 등록된 연예인 중 10%이상 닮은 사람이 없습니다.<br> <span style='color:blue;'> 매일 더 많은 연예인을 등록 중이니 많은 관심 부탁드립니다.</span>`;
     }
 }
 
