@@ -121,9 +121,9 @@ p {
     /* width: 140px; */
     /* height: 222px; */
 
-    width: 23%;
-    height: 23%;
-    border-radius: 50%;
+    max-width: 140px;
+    max-height: 140px;
+    border-radius: 70px;
     animation: fadein 2s;
         -moz-animation: fadein 2s;
         /* Firefox */
@@ -135,35 +135,35 @@ p {
     .uploader #file-image1 {
         display: inline;
         /* margin: 0 auto 0.5rem auto; */
-        width: 23%;
-        height: 23%;
+        width: 140px;
+        height: 140px;
         opacity: 0.5;
         position: relative;
-        transform: translateX(50%);
-        transition: all 5s ease;
-        border-radius: 50%;
+        transform: translateX(72px);
+        transition: all 10s ease;
+        border-radius: 70px;
         
     }
     .uploader #file-image2 {
         display: inline;
         /* margin: 0 auto 0.5rem auto; */
-        width: 23%;
-    height: 23%;
+        width: 140px;
+        height: 140px;
         border-radius: 2em;
         opacity: 0.5;
         position: relative;
-        transform: translateX(-50%);
-        transition: all 5s ease;
-        border-radius: 50%;
+        transform: translateX(-72px);
+        transition: all 10s ease;
+        border-radius: 70px;
         
     }
     .uploader #file-image3 {
         display: inline;
         /* margin: 0 auto 0.5rem auto; */
        
-        width: 23%;
-        height: 23%;
-        border-radius: 50%;
+        max-width: 140px;
+        max-height: 140px;
+        border-radius: 70px;
         animation: fadein 2s;
         -moz-animation: fadein 2s;
         /* Firefox */
@@ -176,6 +176,59 @@ p {
     
     }
 
+@media screen and (max-width: 630px) {
+    .uploader #file-image {
+        display: inline-block;
+        max-width: 75px;
+        max-height: 75px;
+        border-radius: 37px;
+        animation: fadein 2s;
+            -moz-animation: fadein 2s;
+            /* Firefox */
+            -webkit-animation: fadein 2s;
+            /* Safari and Chrome */
+            -o-animation: fadein 2s;
+            /* Opera */
+        }
+    .uploader #file-image1 {
+        display: inline;
+        /* margin: 0 auto 0.5rem auto; */
+        max-width: 75px;
+        max-height: 75px;
+        border-radius: 37px;
+        opacity: 0.5;
+        position: relative;
+        transform: translateX(37px);
+        transition: all 5s ease;
+        }
+    .uploader #file-image2 {
+        display: inline;
+        /* margin: 0 auto 0.5rem auto; */
+        max-width: 75px;
+        max-height: 75px;
+        border-radius: 37px;
+        opacity: 0.5;
+        position: relative;
+        transform: translateX(-37px);
+        transition: all 5s ease;
+     }
+    .uploader #file-image3 {
+        display: inline;
+        /* margin: 0 auto 0.5rem auto; */
+        max-width: 75px;
+        max-height: 75px;
+        border-radius: 37px;
+        animation: fadein 2s;
+        -moz-animation: fadein 2s;
+        /* Firefox */
+        -webkit-animation: fadein 2s;
+        /* Safari and Chrome */
+        -o-animation: fadein 2s;
+        /* Opera */
+        position: relative;
+        /* left: -140px; */
+        }
+    }
 
 .uploader #file-image.hidden {
     display: none;
@@ -420,5 +473,3 @@ body {
       margin: o auto;
       margin-bottom: 2px;
   }
-
-  
