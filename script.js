@@ -1,4 +1,5 @@
 
+
 function ekUpload() {
 
     function InitScript() {
@@ -73,6 +74,10 @@ function ekUpload() {
             document.getElementById('file-image1').src = webkitURL.createObjectURL(file);
 
             console.log(document.getElementById('file-image').src);
+
+
+        
+            
 
             // document.getElementById('file-image1').src = webkitURL.createObjectURL(file);
             init().then(() => {
@@ -290,7 +295,7 @@ async function predict() {
             // `<img src="./${prediction[i].className}.jpg" alt="Preview" class="hidden img-fluid " />`
            if(Nopredict==1){
             labelContainer.childNodes[i].innerHTML =
-            "<span style='color:red;'>20%이상 닮은 사람은 없지만<br> "+prediction[i].className + '와(과) ' + probabilityValue + "% 닮았습니다.</span>";
+            "<span style='color:red;'>50%이상 닮은 사람은 없지만<br> "+prediction[i].className + '와(과) ' + probabilityValue + "% 닮았습니다.</span>";
            }else{
             labelContainer.childNodes[i].innerHTML =
             "<span style='color:red;'>굳이 닮았다고 주장할 만한 사람으로는<br> "+prediction[i].className + '와(과)' + probabilityValue + "% 닮았습니다.</span>";
